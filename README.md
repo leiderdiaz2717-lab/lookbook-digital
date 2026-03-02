@@ -1,23 +1,12 @@
-<a href="https://github.com/tuusuario" target="_blank">Mi GitHub</a>
-<a href="https://tusitio.com" target="_blank">Mi página web</a><a href="https://tusitio.com" target="_blank" class="btn">Visitar mi página</a>.btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-}
+<!-- Reemplaza "TU_USUARIO" con tu nombre de usuario de GitHub -->
+<p align="center">
+  <a href="https://github.com/leiderdiaz2717-lab/lookbook-digital" target="_blank">Ver Repositorio en GitHub</a> •
+  <a href="https://leiderdiaz2717-lab.github.io/lookbook-digital/" target="_blank"><strong>Visitar Página Web</strong></a>
+</p>
 
-.btn:hover {
-  background-color: #0056b3;
-}.challenges-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-    gap: 16px;
-}@media (max-width: 480px) {
-    .challenges-grid { grid-template-columns: 1fr !important; }
-    .challenge-card { padding: 24px 16px; }
-    .challenge-num { font-size: 2.5rem; }
-}# Digital Lookbook: Manifiesto de Diseño 2026
+<br>
+
+# Digital Lookbook: Manifiesto de Diseño 2026
 
 Este proyecto es una exploración de las capacidades modernas de **HTML5 Semántico** y **CSS Grid Layout**, enfocado en la creación de una experiencia visual asimétrica y accesible.
 
