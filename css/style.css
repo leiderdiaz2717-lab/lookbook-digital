@@ -29,7 +29,9 @@ p, h1, h2, h3, h4, h5, h6, li { hyphens: auto; }
 
 /* ─── BOTONES INTERACTIVOS ─── */
 .btn {
-    display: inline-block;
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
     padding: 12px 28px;
     background: var(--gold);
     color: var(--ink);
@@ -42,6 +44,11 @@ p, h1, h2, h3, h4, h5, h6, li { hyphens: auto; }
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     border: 1px solid transparent;
     cursor: pointer;
+}
+
+/* center within cards and other containers */
+.challenge-card, .resources-box, .tools-text, .featured-main-body, .featured-small-body, .media-text, .footer-info-left {
+    text-align: center;
 }
 .btn:hover { background: var(--ink); color: var(--gold); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--gold); }
 .btn:active { transform: translateY(-1px); }
@@ -245,7 +252,7 @@ img, video, iframe { max-width: 100%; height: auto; }
     .featured-main-body { padding: 20px; }
     .featured-small img { height: auto; }
     .page-section { padding: 60px 0; }
-    .intro-strip, .tools-section, .featured-section, .media-section, .challenges-section { padding-left: 20px; padding-right: 20px; }
+    .intro-strip, .tools-section, .featured-section, .media-section, .challenges-section { padding-left: 0; padding-right: 0; }
 }
 
 @media (max-width: 480px) {
@@ -325,26 +332,5 @@ img, video, iframe { max-width: 100%; height: auto; }
     .featured-grid { grid-template-columns: 1fr 1fr; }
     .featured-main { grid-column: 1 / -1; grid-row: auto; }
 }
-@media (max-width: 768px) {
-    .hero { grid-template-columns: 1fr; }
-    .page-section { padding: 60px 24px; }
-    .concepts-grid { grid-template-columns: 1fr; }
-    .css-grid { grid-template-columns: repeat(2, 1fr); }
-    .featured-grid { grid-template-columns: 1fr; }
-    .tools-inner { grid-template-columns: 1fr; }
-    .media-grid { grid-template-columns: 1fr; }
-    /* stack challenges to avoid text breakup */
-    .challenges-grid { grid-template-columns: 1fr; }
-    .footer-top { grid-template-columns: 1fr; }
-    .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
-    .intro-strip { padding: 22px 24px; }
-    .main-footer { padding: 60px 24px 30px; }
-}
 
-.btn { background: var(--gold); color: var(--ink); padding:10px 20px; text-decoration:none; border-radius:5px; border:1px solid transparent; transition: all 0.3s ease; }
-
-.btn:hover { background: var(--ink); color: var(--gold); border-color: var(--gold); }
-
-/* keep small variation for .btn-sm */
-.btn-sm { font-size: 0.8rem; padding: 8px 16px; margin-top: 10px; }
 
