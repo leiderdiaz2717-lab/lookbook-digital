@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<header class="hero">
+<header class="hero" id="inicio">
     <div class="hero-text">
         <!-- Contenedor del texto principal del encabezado -->
         <span class="hero-badge">Aprendiendo a programar paginas Web</span>
@@ -23,10 +23,15 @@
             <div class="stat"><span class="stat-num">05</span><span class="stat-label">Conceptos CSS</span></div>
             <div class="stat"><span class="stat-num">04</span><span class="stat-label">Recursos</span></div>
         </div>
+        <!-- Botón interactivo principal -->
+        <a href="#html-section" class="btn">Comenzar ahora</a>
     </div>
     <div class="hero-visual">
-        <!-- Imagen representativa del encabezado -->
-        <img src="https://www.ubelogic.com/wp-content/uploads/2013/01/html+css.jpg" alt="Código web profesional">
+        <!-- Video de fondo (animacion.mp4) -->
+        <video autoplay muted loop playsinline>
+            <source src="css/images/animacion.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
     </div>
     <div class="hero-scroll"><span class="scroll-line"></span>Explorar contenido</div>
 </header>
@@ -44,7 +49,7 @@
 </div>
 
 <!-- HTML SECTION -->
-<section class="page-section html-section">
+<section id="html-section" class="page-section html-section">
     <div class="section-header">
         <!-- Encabezado de la sección HTML -->
         <div><p class="section-label">Parte 01</p><h2>HTML: Estructura<br><em>y Contenido</em></h2></div>
@@ -117,7 +122,7 @@
         </article>
         <article class="featured-small">
             <img src="https://images.unsplash.com/photo-1616469829167-0bd76a80c913?w=400&auto=format&fit=crop&q=80" alt="Imágenes en HTML">
-            <div class="featured-small-body"><p class="section-label">Multimedia</p><h3>Imágenes y video en HTML5</h3><p>HTML5 permite insertar imágenes con <code style="color:var(--rust);">&lt;img&gt;</code> y videos con <code style="color:var(--rust);">&lt;video&gt;</code> o iframes de YouTube de forma nativa.</p></div>
+            <div class="featured-small-body"><p class="section-label">Multimedia</p><h3>Imágenes y video en HTML5</h3><p>HTML5 permite insertar imágenes con <code>&lt;img&gt;</code> y videos con <code>&lt;video&gt;</code> o iframes de YouTube de forma nativa.</p></div>
         </article>
     </div>
 </section>
@@ -170,10 +175,10 @@
         <span class="section-number">06</span>
     </div>
     <div class="challenges-grid">
-        <article class="challenge-card"><div class="challenge-num">01</div><h3>Reto de Layout</h3><p>Construye un diseño completo utilizando CSS Grid y Flexbox para organizar el contenido en múltiples columnas y filas.</p><a href="https://www.youtube.com/watch?v=oLgtucwjVII" target="_blank" class="challenge-link">Ver reto →</a></article>
-        <article class="challenge-card"><div class="challenge-num">02</div><h3>Reto de Estilo</h3><p>Aplica tipografías, colores, sombras y bordes para transformar una página básica en un diseño atractivo y profesional.</p><a href="https://www.youtube.com/watch?v=sRaVhp96jxM" target="_blank" class="challenge-link">Ver reto →</a></article>
-        <article class="challenge-card"><div class="challenge-num">03</div><h3>Tarjetas de Perfil</h3><p>Diseña tarjetas de perfil interactivas con efectos hover, imágenes circulares y animaciones de transición con CSS puro.</p><a href="https://github.com/parthwebdev/Instagram-Posts/tree/main/Cards/01" target="_blank" class="challenge-link">Ver en GitHub →</a></article>
-        <article class="challenge-card"><div class="challenge-num">04</div><h3>Video de Fondo</h3><p>Crea un encabezado hero impactante con un video de fondo usando la etiqueta <code style="color:var(--teal);">&lt;video&gt;</code> y posicionamiento CSS.</p><a href="https://carontestudio.com/blog/como-poner-un-video-de-fondo-en-html/" target="_blank" class="challenge-link">Ver tutorial →</a></article>
+        <article class="challenge-card"><div class="challenge-num">01</div><h3>Reto de Layout</h3><p>Construye un diseño completo utilizando CSS Grid y Flexbox para organizar el contenido en múltiples columnas y filas.</p><a href="https://www.youtube.com/watch?v=oLgtucwjVII" target="_blank" class="btn btn-sm">Ver reto</a></article>
+        <article class="challenge-card"><div class="challenge-num">02</div><h3>Reto de Estilo</h3><p>Aplica tipografías, colores, sombras y bordes para transformar una página básica en un diseño atractivo y profesional.</p><a href="https://www.youtube.com/watch?v=sRaVhp96jxM" target="_blank" class="btn btn-sm">Ver reto</a></article>
+        <article class="challenge-card"><div class="challenge-num">03</div><h3>Tarjetas de Perfil</h3><p>Diseña tarjetas de perfil interactivas con efectos hover, imágenes circulares y animaciones de transición con CSS puro.</p><a href="https://github.com/parthwebdev/Instagram-Posts/tree/main/Cards/01" target="_blank" class="btn btn-sm">Ver GitHub</a></article>
+        <article class="challenge-card"><div class="challenge-num">04</div><h3>Video de Fondo</h3><p>Crea un encabezado hero impactante con un video de fondo usando la etiqueta <code style="color:var(--teal);">&lt;video&gt;</code> y posicionamiento CSS.</p><a href="https://carontestudio.com/blog/como-poner-un-video-de-fondo-en-html/" target="_blank" class="btn btn-sm">Ver tutorial</a></article>
     </div>
 </section>
 
@@ -209,12 +214,14 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="footer-info-left" style="text-align: center; flex: 1;">
+        <div class="footer-info-left">
             <!-- Información del programa y créditos del autor -->
             <p>© Programa de formación &#8594; Análisis y Desarrollo de SOFTWARE</p>
             <p>© Centro para la Industria Petroquímica &#8594; SENA </p>
             <p>© Aprendiz SENA - FICHA: 3067861</p>
             <p><strong>Aprendiendo a programar páginas Web</strong></p>
+            <!-- Botón para volver al inicio -->
+            <a href="#inicio" class="btn footer-back-btn">Volver al inicio</a>
         </div>
 
         <div class="footer-author">
@@ -224,14 +231,30 @@
             </div>
             <div class="author-info">
                 <span>Leider Díaz Carrillo</span>
-                <a href="https://youtube.com/@mensajesfinales?si=cID6jwKqknLkusU9" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #FF0000; display: block; font-size: 0.9em; margin: 4px 0;">
+                <a href="https://youtube.com/@mensajesfinales?si=cID6jwKqknLkusU9" target="_blank" rel="noopener noreferrer" class="author-yt-link">
                     ▶ Suscríbete a mi canal
                 </a>
+                <!-- Video de suscripción (Segundo video) -->
+                <video class="footer-mini-video" autoplay muted loop playsinline>
+                    <source src="css/images/subcribete.mp4" type="video/mp4">
+                </video>
                 <small>Desarrollado · 28/02/2026</small>
             </div>
         </div>
     </div>
 </footer>
 <!-- FIN DEL PIE DE PÁGINA -->
+
+<!-- Script para asegurar que AMBOS videos se reproduzcan automáticamente -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecciona todos los videos de la página (el del header y el del footer)
+        var videos = document.querySelectorAll('video');
+        videos.forEach(function(video) {
+            video.muted = true; // Asegura que estén silenciados para permitir autoplay
+            video.play().catch(function(e) { console.log("Error al reproducir video:", e); });
+        });
+    });
+</script>
 </body>
 </html>

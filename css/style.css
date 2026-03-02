@@ -17,30 +17,66 @@
 html { scroll-behavior: smooth; }
 body { background: var(--paper); font-family: var(--font-body); color: var(--ink); overflow-x: hidden; }
 
+/* ─── BOTONES INTERACTIVOS ─── */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--gold);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.btn:hover { background: var(--ink); color: var(--gold); transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--gold); }
+.btn:active { transform: translateY(-1px); }
+.btn-sm { font-size: 0.8rem; padding: 8px 16px; margin-top: 10px; }
+
 /* ─── HERO ─── */
-.hero { min-height: 100vh; background: var(--ink); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; }
+.hero { min-height: 100vh; background: var(--ink); display: grid; place-items: center; position: relative; overflow: hidden; }
 .hero::before {
     content: ''; position: absolute; inset: 0;
     background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.12) 0%, transparent 70%),
                 repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.03) 80px),
                 repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.03) 80px);
-    pointer-events: none; z-index: 1;
+    pointer-events: none; z-index: 2;
 }
-.hero-text { padding: 80px 60px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
+.hero-text {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
 .hero-badge { display: inline-block; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 6px 14px; border-radius: 2px; margin-bottom: 40px; width: fit-content; }
 .hero h1 { font-family: var(--font-display); font-size: clamp(4rem, 8vw, 9rem); line-height: 0.92; color: #fff; letter-spacing: 0.02em; margin-bottom: 30px; }
 .hero h1 span { color: var(--gold); display: block; }
-.hero-desc { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 420px; margin-bottom: 50px; border-left: 2px solid var(--gold); padding-left: 20px; }
-.hero-stats { display: flex; gap: 40px; }
+.hero-desc { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.8; max-width: 550px; margin-bottom: 50px; border-left: none; padding-left: 0; border-top: 2px solid var(--gold); padding-top: 20px; }
+.hero-stats { display: flex; gap: 40px; justify-content: center; }
 .stat { display: flex; flex-direction: column; }
 .stat-num { font-family: var(--font-display); font-size: 2.8rem; color: var(--gold); line-height: 1; }
 .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 4px; }
-.hero-visual { position: relative; z-index: 2; overflow: hidden; }
+.hero-visual {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
 
 /* ✅ IMAGEN HERO CON MÁS COLOR */
-.hero-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: saturate(1.4) contrast(1.1); }
+.hero-visual img, .hero-visual video { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; filter: saturate(1.4) contrast(1.1); }
 .hero-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--ink) 0%, transparent 50%); }
-.hero-scroll { position: absolute; bottom: 40px; left: 60px; display: flex; align-items: center; gap: 12px; z-index: 3; color: rgba(255,255,255,0.4); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; z-index: 3; color: rgba(255,255,255,0.4); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; }
 .scroll-line { width: 40px; height: 1px; background: rgba(255,255,255,0.3); }
 
 /* ─── LABELS ─── */
@@ -73,7 +109,7 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .concept-img-wrap { height: 200px; overflow: hidden; }
 
 /* ✅ IMÁGENES DE CONCEPTOS CON MÁS COLOR */
-.concept-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, opacity 0.4s ease; filter: saturate(1.5) contrast(1.05); }
+.concept-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, opacity 0.4s ease; filter: saturate(1.5) contrast(1.05); animation: imageFloat 6s ease-in-out infinite; animation-delay: 1s; }
 .concept-card:hover .concept-img-wrap img { transform: scale(1.05); }
 .concept-body { padding: 28px 28px 32px; position: relative; }
 .concept-number { font-family: var(--font-display); font-size: 5rem; color: rgba(0,0,0,0.04); position: absolute; top: -10px; right: 20px; line-height: 1; transition: color 0.4s ease; }
@@ -83,6 +119,13 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .concept-body code { font-family: 'Courier New', monospace; font-size: 0.82rem; color: var(--teal); background: rgba(26,107,107,0.08); padding: 1px 5px; border-radius: 3px; transition: color 0.4s ease; }
 
 /* ─── CSS SECTION ─── */
+/* Animación suave para imágenes */
+@keyframes imageFloat {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+}
+
 .css-section { background: var(--ink); }
 .css-section .section-header h2 { color: #fff; }
 .css-section .section-header h2 em { color: var(--gold); }
@@ -95,7 +138,7 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .css-card-img { height: 160px; overflow: hidden; }
 
 /* ✅ IMÁGENES CSS CARDS CON MÁS COLOR */
-.css-card-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; filter: saturate(1.6) contrast(1.05); transition: all 0.4s ease; }
+.css-card-img img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; filter: saturate(1.6) contrast(1.05); transition: all 0.4s ease; animation: imageFloat 6s ease-in-out infinite; }
 .css-card:hover .css-card-img img { opacity: 1; filter: saturate(2) contrast(1.1); transform: scale(1.08); }
 .css-card-body { padding: 20px; }
 .css-icon { width: 36px; height: 36px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.9rem; color: var(--ink); margin-bottom: 12px; }
@@ -118,11 +161,12 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .featured-small:hover { box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
 
 /* ✅ IMÁGENES FEATURED SMALL CON MÁS COLOR */
-.featured-small img { width: 100%; height: 180px; object-fit: cover; filter: saturate(1.5) contrast(1.05); }
+.featured-small img { width: 100%; height: 180px; object-fit: cover; filter: saturate(1.5) contrast(1.05); animation: imageFloat 6s ease-in-out infinite; animation-delay: 2s; }
 .featured-small-body { padding: 24px; flex: 1; }
 .featured-small-body .section-label { color: var(--rust); }
 .featured-small-body h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 10px; color: var(--ink); }
 .featured-small-body p { font-size: 0.85rem; color: #666; line-height: 1.65; }
+.featured-small-body p code { color: var(--rust); }
 
 /* ─── TOOLS ─── */
 .tools-section { background: var(--paper); padding: 80px 60px; }
@@ -169,7 +213,7 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .challenge-card h3 { font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 12px; color: var(--ink); }
 .challenge-card p { font-size: 0.85rem; color: #666; line-height: 1.65; margin-bottom: 20px; }
 .challenge-link { display: inline-flex; align-items: center; gap: 8px; color: var(--teal); text-decoration: none; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; transition: gap 0.25s ease; }
-.challenge-link:hover { gap: 14px; }
+.challenge-link:hover { gap: 14px; color: var(--ink); }
 
 /* ════ FOOTER ════ */
 .main-footer { background: var(--ink); padding: 80px 60px 40px; }
@@ -184,6 +228,11 @@ body { background: var(--paper); font-family: var(--font-body); color: var(--ink
 .footer-col a:hover { color: #fff; }
 
 .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; }
+.footer-info-left { text-align: center; flex: 1; }
+.footer-back-btn { margin-top: 20px; font-size: 0.9rem; }
+.author-yt-link { text-decoration: none; color: #FF0000; display: block; font-size: 0.9em; margin: 4px 0; transition: transform 0.2s ease; }
+.author-yt-link:hover { transform: translateX(4px); }
+.footer-mini-video { width: 100%; max-width: 140px; border-radius: 6px; margin: 8px 0; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
 .footer-info-left p { font-size: 0.8rem; color: rgba(255,255,255,0.25); margin: 4px 0; }
 .footer-author { display: flex; align-items: center; gap: 14px; }
 
