@@ -19,7 +19,7 @@ html, body { margin: 0; padding: 0; width: 100%; }
 body { background: var(--paper); font-family: var(--font-body); color: var(--ink); overflow-x: hidden; word-break: normal; overflow-wrap: break-word; }
 
 /* enable hyphenation only for headings and list items */
-h1, h2, h3, h4, h5, h6, li { hyphens: none; }
+h1, h2, h3, h4, h5, h6, li, p, span, a { hyphens: none; }
 
 
 /* helper: ensure wide elements fill the viewport */
